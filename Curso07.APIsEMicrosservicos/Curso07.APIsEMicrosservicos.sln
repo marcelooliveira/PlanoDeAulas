@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.MessageBrokers", "01.MessageBrokers", "{845D845A-4C45-45A1-9109-59703EA45ED3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Virtualizacao", "02.Virtualizacao", "{91BAE610-E526-470D-A341-7B7AE228278D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.IDdeRastreabilidade", "03.IDdeRastreabilidade", "{860EF811-AF31-4770-BEE9-13AEC56E9E8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Idempotencia", "04.Idempotencia", "{B9E5D8C0-5BC4-4DA2-9C28-77E29C06BCE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.CircuitBreaker", "05.CircuitBreaker", "{1A61DAE5-EB93-4617-8E5F-DFEAF5F9D5B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.Telemetria", "06.Telemetria", "{4F9A16AF-3048-4A95-A620-50C58A3B9B73}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07.APIFirst", "07.APIFirst", "{EDFAB889-6EA8-44A0-8DF7-C8631C4E9A4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08.AsyncAPI", "08.AsyncAPI", "{8692CCDE-D5A1-4E17-9BB5-6EF9FC92D919}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09.EventDrivenArchitecture", "09.EventDrivenArchitecture", "{99645AFA-B2E2-487C-BE8F-67424CD6ADEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula01.Send", "01.MessageBrokers\Sender\Aula01.Send.csproj", "{D2410026-997A-4C93-9F49-065A126D2EB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula01.Receive", "01.MessageBrokers\Receive\Aula01.Receive.csproj", "{44D345BB-7E73-4A13-A810-A9E4D275D54C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2410026-997A-4C93-9F49-065A126D2EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2410026-997A-4C93-9F49-065A126D2EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2410026-997A-4C93-9F49-065A126D2EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2410026-997A-4C93-9F49-065A126D2EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D345BB-7E73-4A13-A810-A9E4D275D54C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D345BB-7E73-4A13-A810-A9E4D275D54C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D345BB-7E73-4A13-A810-A9E4D275D54C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D345BB-7E73-4A13-A810-A9E4D275D54C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2410026-997A-4C93-9F49-065A126D2EB2} = {845D845A-4C45-45A1-9109-59703EA45ED3}
+		{44D345BB-7E73-4A13-A810-A9E4D275D54C} = {845D845A-4C45-45A1-9109-59703EA45ED3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0E0D139-5860-423A-B6D8-CC50C58615AA}
+	EndGlobalSection
+EndGlobal
