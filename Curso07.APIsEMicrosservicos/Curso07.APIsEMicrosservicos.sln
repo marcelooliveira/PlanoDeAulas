@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.MessageBrokers", "01.Mes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Virtualizacao", "02.Virtualizacao", "{91BAE610-E526-470D-A341-7B7AE228278D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.IDdeRastreabilidade", "03.IDdeRastreabilidade", "{860EF811-AF31-4770-BEE9-13AEC56E9E8B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.IDdeRastreabilidade", "04.IDdeRastreabilidade", "{860EF811-AF31-4770-BEE9-13AEC56E9E8B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Idempotencia", "04.Idempotencia", "{B9E5D8C0-5BC4-4DA2-9C28-77E29C06BCE8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.Idempotencia", "06.Idempotencia", "{B9E5D8C0-5BC4-4DA2-9C28-77E29C06BCE8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.CircuitBreaker", "05.CircuitBreaker", "{1A61DAE5-EB93-4617-8E5F-DFEAF5F9D5B6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.Telemetria", "06.Telemetria", "{4F9A16AF-3048-4A95-A620-50C58A3B9B73}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Telemetria", "03.Telemetria", "{4F9A16AF-3048-4A95-A620-50C58A3B9B73}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07.APIFirst", "07.APIFirst", "{EDFAB889-6EA8-44A0-8DF7-C8631C4E9A4A}"
 EndProject
@@ -23,7 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09.EventDrivenArchitecture"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula01.Send", "01.MessageBrokers\Sender\Aula01.Send.csproj", "{D2410026-997A-4C93-9F49-065A126D2EB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula01.Receive", "01.MessageBrokers\Receive\Aula01.Receive.csproj", "{44D345BB-7E73-4A13-A810-A9E4D275D54C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula01.Receive", "01.MessageBrokers\Receive\Aula01.Receive.csproj", "{44D345BB-7E73-4A13-A810-A9E4D275D54C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemetria_ServiceA", "03.Telemetria\Telemetria_ServiceA\Telemetria_ServiceA.csproj", "{29FAD118-B74F-4E5D-8702-2D167B1F5FC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemetria_ServiceB", "Telemetria_ServiceB\Telemetria_ServiceB.csproj", "{B11705C8-A81E-46FE-A11E-F6C9F73FB966}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{44D345BB-7E73-4A13-A810-A9E4D275D54C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44D345BB-7E73-4A13-A810-A9E4D275D54C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44D345BB-7E73-4A13-A810-A9E4D275D54C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FAD118-B74F-4E5D-8702-2D167B1F5FC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FAD118-B74F-4E5D-8702-2D167B1F5FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FAD118-B74F-4E5D-8702-2D167B1F5FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FAD118-B74F-4E5D-8702-2D167B1F5FC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B11705C8-A81E-46FE-A11E-F6C9F73FB966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B11705C8-A81E-46FE-A11E-F6C9F73FB966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B11705C8-A81E-46FE-A11E-F6C9F73FB966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B11705C8-A81E-46FE-A11E-F6C9F73FB966}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +58,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D2410026-997A-4C93-9F49-065A126D2EB2} = {845D845A-4C45-45A1-9109-59703EA45ED3}
 		{44D345BB-7E73-4A13-A810-A9E4D275D54C} = {845D845A-4C45-45A1-9109-59703EA45ED3}
+		{29FAD118-B74F-4E5D-8702-2D167B1F5FC8} = {4F9A16AF-3048-4A95-A620-50C58A3B9B73}
+		{B11705C8-A81E-46FE-A11E-F6C9F73FB966} = {4F9A16AF-3048-4A95-A620-50C58A3B9B73}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D0E0D139-5860-423A-B6D8-CC50C58615AA}

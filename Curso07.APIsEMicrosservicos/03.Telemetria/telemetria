@@ -1,0 +1,14 @@
+Imagine que você trabalhe numa agência espacial que está programando uma missão não-tripulada a marte.
+
+Essa missão contará com dois equipamentos remotos: um SATÉLITE que vai ficar orbitando marte, e um VEÍCULO que irá receber instruções sobre como dirigir sobre o solo marciano.
+
+Problema: Você é responsável por garantir que os sistemas desses dois equipamentos estejam funcionando adequadamente. Além disso, você deve reportar outras equipes sobre o funcionamento desses equipamentos a cada 10 minutos. Mas como realizar essa tarefa, se os equipamentos ficarão a mais de 300 milhões de quilômetros da terra?
+
+Solução: Você precisa criar um sistema de telemetria.
+
+Telemetria do grego telemetria, significa medição remota, ou medição à distância.
+
+Um dos componentes da telemetria é a transferência de dados, que pode ser sem fio (rádio, infravermelho, telefone ou internet, fibra ótica, rede wireless, rede elétrica.
+
+
+
