@@ -8,7 +8,12 @@ Solução: Você precisa criar um sistema de telemetria.
 
 Telemetria do grego telemetria, significa medição remota, ou medição à distância.
 
-Um dos componentes da telemetria é a transferência de dados, que pode ser sem fio (rádio, infravermelho, telefone ou internet, fibra ótica, rede wireless, rede elétrica.
+Um dos componentes da telemetria é a transferência de dados, que pode ser sem fio (rádio, infravermelho, telefone ou internet, fibra ótica, rede wireless, rede elétrica. Essas tecnologias garantem a entrega dos dados remotos.
+
+Outro componente da telemetria é a medição. Para medir os dados de um satélite ou um veículo marciano, você precisa instalar instrumentos de medição. Você precisa de uma instrumentação diferente para cada tipo de informação que será captada: velocidade, posição em relação à terra, posição em relação a marte, temperatura, nível da bateria, etc.
+
+Em um aplicativo de microsserviços, você precisa rastrear o que está acontecendo em dezenas ou até centenas de serviços. Para entender o que está acontecendo, você deve coletar a telemetria do aplicativo. A telemetria pode ser dividida em logs e métricas. ... Os logs são úteis principalmente para análise de causa raiz.
+
 
 
 

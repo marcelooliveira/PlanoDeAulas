@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using OpenTelemetry.Trace;
 using OpenTelemetry.Resources;
+using System.Diagnostics;
 
 namespace Telemetria_ServiceA
 {
@@ -18,6 +19,8 @@ namespace Telemetria_ServiceA
     {
         public Startup(IConfiguration configuration)
         {
+            Activity.DefaultIdFormat = System.Diagnostics.ActivityIdFormat.W3C;
+
             Configuration = configuration;
         }
 
@@ -26,6 +29,7 @@ namespace Telemetria_ServiceA
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddControllers();
 
             services.AddOpenTelemetryTracing(builder =>
@@ -33,6 +37,7 @@ namespace Telemetria_ServiceA
                 .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Telemetria_ServiceA"))
                 .AddAspNetCoreInstrumentation()
                 .AddHttpClientInstrumentation()
+                .AddConsoleExporter() //imprimir no console
                 .AddJaegerExporter());
         }
 

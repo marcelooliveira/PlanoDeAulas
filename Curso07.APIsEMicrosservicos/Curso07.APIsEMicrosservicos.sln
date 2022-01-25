@@ -25,9 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula01.Send", "01.MessageBr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula01.Receive", "01.MessageBrokers\Receive\Aula01.Receive.csproj", "{44D345BB-7E73-4A13-A810-A9E4D275D54C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemetria_ServiceA", "03.Telemetria\Telemetria_ServiceA\Telemetria_ServiceA.csproj", "{29FAD118-B74F-4E5D-8702-2D167B1F5FC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telemetria_ServiceA", "03.Telemetria\Telemetria_ServiceA\Telemetria_ServiceA.csproj", "{29FAD118-B74F-4E5D-8702-2D167B1F5FC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemetria_ServiceB", "Telemetria_ServiceB\Telemetria_ServiceB.csproj", "{B11705C8-A81E-46FE-A11E-F6C9F73FB966}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telemetria_ServiceB", "Telemetria_ServiceB\Telemetria_ServiceB.csproj", "{B11705C8-A81E-46FE-A11E-F6C9F73FB966}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
