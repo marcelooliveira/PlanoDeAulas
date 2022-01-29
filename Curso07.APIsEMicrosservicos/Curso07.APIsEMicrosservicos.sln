@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telemetria_ServiceA", "03.T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telemetria_ServiceB", "Telemetria_ServiceB\Telemetria_ServiceB.csproj", "{B11705C8-A81E-46FE-A11E-F6C9F73FB966}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIFirstDemo", "07.APIFirst\APIFirstDemo\APIFirstDemo.csproj", "{ACBF1A98-4BE0-4554-AE26-67B65762F437}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{B11705C8-A81E-46FE-A11E-F6C9F73FB966}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B11705C8-A81E-46FE-A11E-F6C9F73FB966}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B11705C8-A81E-46FE-A11E-F6C9F73FB966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACBF1A98-4BE0-4554-AE26-67B65762F437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACBF1A98-4BE0-4554-AE26-67B65762F437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACBF1A98-4BE0-4554-AE26-67B65762F437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACBF1A98-4BE0-4554-AE26-67B65762F437}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{44D345BB-7E73-4A13-A810-A9E4D275D54C} = {845D845A-4C45-45A1-9109-59703EA45ED3}
 		{29FAD118-B74F-4E5D-8702-2D167B1F5FC8} = {4F9A16AF-3048-4A95-A620-50C58A3B9B73}
 		{B11705C8-A81E-46FE-A11E-F6C9F73FB966} = {4F9A16AF-3048-4A95-A620-50C58A3B9B73}
+		{ACBF1A98-4BE0-4554-AE26-67B65762F437} = {EDFAB889-6EA8-44A0-8DF7-C8631C4E9A4A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D0E0D139-5860-423A-B6D8-CC50C58615AA}
