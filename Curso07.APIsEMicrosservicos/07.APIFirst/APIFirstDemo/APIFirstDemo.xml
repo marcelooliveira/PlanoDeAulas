@@ -4,39 +4,5 @@
         <name>APIFirstDemo</name>
     </assembly>
     <members>
-        <member name="M:APIFirstDemo.Controllers.TodoController.Post(APIFirstDemo.TodoItem)">
-            <summary>
-            Cria uma nova tarefa
-            </summary>
-            <param name="item">Dados da tarefa</param>
-            <returns>tarefa criada</returns>
-        </member>
-        <member name="M:APIFirstDemo.Controllers.TodoController.Get(System.Int32)">
-            <summary>
-            Obtém uma tarefa por Id
-            </summary>
-            <param name="id">Id da tarefa</param>
-            <returns>Uma tarefa</returns>
-        </member>
-        <member name="M:APIFirstDemo.Controllers.TodoController.Put(APIFirstDemo.TodoItem)">
-            <summary>
-            Cria ou modifica uma tarefa
-            </summary>
-            <param name="item">Dados da tarefa</param>
-            <returns>Dados da tarefa criada ou modificada</returns>
-        </member>
-        <member name="M:APIFirstDemo.Controllers.TodoController.Delete(System.Int32)">
-            <summary>
-            Remove uma tarefa
-            </summary>
-            <param name="id">Id da Tarefa</param>
-            <returns></returns>
-        </member>
-        <member name="M:APIFirstDemo.Controllers.TodoController.GetAll">
-            <summary>
-            Obtém todas as tarefas
-            </summary>
-            <returns>Lista de tarefas</returns>
-        </member>
     </members>
 </doc>
