@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Telemetria_ServiceA": {
+    "APIFirstDemo": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",

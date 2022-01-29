@@ -13,7 +13,7 @@ using OpenTelemetry.Trace;
 using OpenTelemetry.Resources;
 using System.Diagnostics;
 
-namespace Telemetria_ServiceA
+namespace APIFirstDemo
 {
     public class Startup
     {
@@ -31,14 +31,6 @@ namespace Telemetria_ServiceA
         {
 
             services.AddControllers();
-
-            services.AddOpenTelemetryTracing(builder =>
-                builder
-                .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Telemetria_ServiceA"))
-                .AddAspNetCoreInstrumentation()
-                .AddHttpClientInstrumentation()
-                .AddConsoleExporter() //imprimir no console
-                .AddJaegerExporter());
 
             services.AddSwaggerGen();
         }

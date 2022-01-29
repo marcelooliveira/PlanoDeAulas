@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APIFirstDemo</name>
+    </assembly>
+    <members>
+        <member name="M:APIFirstDemo.Controllers.TodoController.Get">
+            <summary>
+            Obtém todas as tarefas
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

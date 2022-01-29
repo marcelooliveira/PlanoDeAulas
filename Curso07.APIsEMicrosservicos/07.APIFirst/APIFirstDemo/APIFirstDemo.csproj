@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\moliveira\Documents\GitHub\PlanoDeAulas\Curso07.APIsEMicrosservicos\07.APIFirst\APIFirstDemo\APIFirstDemo.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="OpenTelemetry" Version="1.2.0-rc1" />
     <PackageReference Include="OpenTelemetry.Api" Version="1.2.0-rc1" />

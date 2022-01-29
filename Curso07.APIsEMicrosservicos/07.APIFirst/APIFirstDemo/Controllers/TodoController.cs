@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Telemetria_ServiceA.Controllers
+namespace APIFirstDemo.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -13,6 +13,10 @@ namespace Telemetria_ServiceA.Controllers
         static Dictionary<int, TodoItem> todoItems 
             = new Dictionary<int, TodoItem>();
 
+        /// <summary>
+        /// Obtém todas as tarefas
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetAll")]
         public ActionResult<List<TodoItem>> Get()
