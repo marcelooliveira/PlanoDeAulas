@@ -12,7 +12,7 @@
     <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc8" />
     <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc8" />
     <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc8" />
-    <PackageReference Include="RestSharp" Version="107.1.1" />
+    <PackageReference Include="RestSharp" Version="107.1.2" />
   </ItemGroup>
 
 

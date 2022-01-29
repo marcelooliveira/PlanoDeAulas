@@ -1,42 +1,17 @@
 ﻿using APIFirstDemo;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace APIFirstDemo.Controllers
 {
+
     [ApiController]
     [Route("[controller]")]
 
     public class TodoController : ControllerBase
     {
-        static Dictionary<int, TodoItem> todoItems 
-            = new Dictionary<int, TodoItem>();
-
-        /// <summary>
-        /// Obtém todas as tarefas
-        /// </summary>
-        /// <returns>Lista de tarefas</returns>
-        [HttpGet]
-        [Route("GetAll")]
-        public ActionResult<List<TodoItem>> Get()
-        {
-            return todoItems.Values.ToList();
-        }
-
-        /// <summary>
-        /// Obtém uma tarefa por Id
-        /// </summary>
-        /// <param name="id">Id da tarefa</param>
-        /// <returns>Uma tarefa</returns>
-        [HttpGet]
-        public ActionResult<TodoItem> Get(int id)
-        {
-            return Ok(todoItems
-                .Where(i => i.Key == id)
-                .Select(i => i.Value)
-                .SingleOrDefault());
-        }
+        private readonly TodoService service = new TodoService();
 
         /// <summary>
         /// Cria uma nova tarefa
@@ -46,22 +21,18 @@ namespace APIFirstDemo.Controllers
         [HttpPost]
         public ActionResult<TodoItem> Post([FromBody] TodoItem item)
         {
-            int id = GetNextId();
-            item = new TodoItem(id, item.Name);
-            todoItems.Add(id, item);
-            return Ok(item);
+            return Ok(service.Create(item));
         }
 
-        private static int GetNextId()
+        /// <summary>
+        /// Obtém uma tarefa por Id
+        /// </summary>
+        /// <param name="id">Id da tarefa</param>
+        /// <returns>Uma tarefa</returns>
+        [HttpGet("{id}")]
+        public ActionResult<TodoItem> Get(int id)
         {
-            int id = 0;
-            var last = todoItems.Values.LastOrDefault();
-            if (last != null)
-            {
-                id = last.Id;
-            }
-            id++;
-            return id;
+            return Ok(service.Get(id));
         }
 
         /// <summary>
@@ -72,18 +43,7 @@ namespace APIFirstDemo.Controllers
         [HttpPut]
         public ActionResult<TodoItem> Put([FromBody] TodoItem item)
         {
-            if (todoItems.ContainsKey(item.Id))
-            {
-                todoItems[item.Id] = item;
-                return Ok(item);
-            }
-            else
-            {
-                int id = GetNextId();
-                var newItem = new TodoItem(id, item.Name);
-                todoItems.Add(id, newItem);
-                return Ok(newItem);
-            }
+            return Ok(service.Save(item));
         }
 
         /// <summary>
@@ -94,14 +54,18 @@ namespace APIFirstDemo.Controllers
         [HttpDelete("{id}")]
         public ActionResult<TodoItem> Delete(int id)
         {
-            if (todoItems.ContainsKey(id))
-            {
-                var item = todoItems[id];
-                todoItems.Remove(id);
-                return Ok(item);
-            }
+            return Ok(service.Delete(id));
+        }
 
-            return Ok();
+        /// <summary>
+        /// Obtém todas as tarefas
+        /// </summary>
+        /// <returns>Lista de tarefas</returns>
+        [HttpGet]
+        [Route("GetAll")]
+        public ActionResult<List<TodoItem>> GetAll()
+        {
+            return Ok(service.GetAll());
         }
     }
 }
