@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 using OpenTelemetry.Trace;
 using OpenTelemetry.Resources;
 using System.Diagnostics;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using System.IO;
 
 namespace APIFirstDemo
 {
@@ -32,7 +35,30 @@ namespace APIFirstDemo
 
             services.AddControllers();
 
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "ToDo API",
+                    Description = "Uma Web API ASP.NET Core para gerenciamento de tarefas",
+                    TermsOfService = new Uri("https://example.com/terms"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Example Contact",
+                        Url = new Uri("https://example.com/contact")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Example License",
+                        Url = new Uri("https://example.com/license")
+                    }
+                });
+
+                // using System.Reflection;
+                var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

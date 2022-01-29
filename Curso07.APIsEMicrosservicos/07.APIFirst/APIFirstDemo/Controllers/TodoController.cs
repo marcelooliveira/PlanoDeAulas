@@ -16,7 +16,7 @@ namespace APIFirstDemo.Controllers
         /// <summary>
         /// Obtém todas as tarefas
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Lista de tarefas</returns>
         [HttpGet]
         [Route("GetAll")]
         public ActionResult<List<TodoItem>> Get()
@@ -24,6 +24,11 @@ namespace APIFirstDemo.Controllers
             return todoItems.Values.ToList();
         }
 
+        /// <summary>
+        /// Obtém uma tarefa por Id
+        /// </summary>
+        /// <param name="id">Id da tarefa</param>
+        /// <returns>Uma tarefa</returns>
         [HttpGet]
         public ActionResult<TodoItem> Get(int id)
         {
@@ -33,6 +38,11 @@ namespace APIFirstDemo.Controllers
                 .SingleOrDefault());
         }
 
+        /// <summary>
+        /// Cria uma nova tarefa
+        /// </summary>
+        /// <param name="item">Dados da tarefa</param>
+        /// <returns>tarefa criada</returns>
         [HttpPost]
         public ActionResult<TodoItem> Post([FromBody] TodoItem item)
         {
@@ -54,6 +64,11 @@ namespace APIFirstDemo.Controllers
             return id;
         }
 
+        /// <summary>
+        /// Cria ou modifica uma tarefa
+        /// </summary>
+        /// <param name="item">Dados da tarefa</param>
+        /// <returns>Dados da tarefa criada ou modificada</returns>
         [HttpPut]
         public ActionResult<TodoItem> Put([FromBody] TodoItem item)
         {
@@ -71,12 +86,19 @@ namespace APIFirstDemo.Controllers
             }
         }
 
+        /// <summary>
+        /// Remove uma tarefa
+        /// </summary>
+        /// <param name="id">Id da Tarefa</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public ActionResult<TodoItem> Delete(int id)
         {
             if (todoItems.ContainsKey(id))
             {
+                var item = todoItems[id];
                 todoItems.Remove(id);
+                return Ok(item);
             }
 
             return Ok();
