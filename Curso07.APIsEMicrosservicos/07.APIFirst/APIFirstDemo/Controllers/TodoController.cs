@@ -18,7 +18,7 @@ namespace APIFirstDemo.Controllers
         /// <summary>
         /// Cria uma nova tarefa
         /// </summary>
-        /// <param name="item">Dados da tarefa</param>
+        /// <param name="item">dados da tarefa</param>
         /// <returns>tarefa criada</returns>
         [HttpPost]
         public ActionResult<TodoItem> Post([FromBody]TodoItem item)
@@ -26,12 +26,11 @@ namespace APIFirstDemo.Controllers
             return Ok(service.Create(item));
         }
 
-
         /// <summary>
         /// Obtém uma tarefa por Id
         /// </summary>
         /// <param name="id">Id da tarefa</param>
-        /// <returns>Uma tarefa</returns>
+        /// <returns>Tarefa retornada</returns>
         [HttpGet("{id}")]
         public ActionResult<TodoItem> Get(int id)
         {
@@ -41,10 +40,10 @@ namespace APIFirstDemo.Controllers
         /// <summary>
         /// Cria ou modifica uma tarefa
         /// </summary>
-        /// <param name="item">Dados da tarefa</param>
-        /// <returns>Dados da tarefa criada ou modificada</returns>
+        /// <param name="item">Tarefa a ser criada ou atualizada</param>
+        /// <returns>Tarea criada ou atualizada</returns>
         [HttpPut]
-        public ActionResult<TodoItem> Put([FromBody]TodoItem item)
+        public ActionResult<TodoItem> Put(TodoItem item)
         {
             return Ok(service.Save(item));
         }
@@ -52,7 +51,7 @@ namespace APIFirstDemo.Controllers
         /// <summary>
         /// Remove uma tarefa
         /// </summary>
-        /// <param name="id">Id da tarefa</param>
+        /// <param name="id">Tarefa a ser removida</param>
         /// <returns>Tarefa que foi removida</returns>
         [HttpDelete("{id}")]
         public ActionResult<TodoItem> Delete(int id)
@@ -63,7 +62,7 @@ namespace APIFirstDemo.Controllers
         /// <summary>
         /// Obtém todas as tarefas
         /// </summary>
-        /// <returns>Listas de tarefas</returns>
+        /// <returns>Lista das tarefas retornadas</returns>
         [HttpGet]
         [Route("GetAll")]
         public ActionResult<List<TodoItem>> GetAll()
