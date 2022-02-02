@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AsyncBreakfast
@@ -55,7 +56,7 @@ namespace AsyncBreakfast
                 Console.WriteLine("Inserindo uma fatia de pão na torradeira");
             }
             Console.WriteLine("Aquecendo a torradeira...");
-            Task.Delay(3000).Wait();
+            Thread.Sleep(3000);
             Console.WriteLine("Retire a fatia da torradeira");
 
             return new Torrada();
@@ -66,13 +67,13 @@ namespace AsyncBreakfast
             Console.WriteLine();
             Console.WriteLine($"inserindo {fatias} fatias de bacon na panela");
             Console.WriteLine("fritando o primeiro lado do bacon...");
-            Task.Delay(3000).Wait();
+            Thread.Sleep(3000);
             for (int fatia = 0; fatia < fatias; fatia++)
             {
                 Console.WriteLine("virando o bacon");
             }
             Console.WriteLine("fritando o segundo lado do bacon...");
-            Task.Delay(3000).Wait();
+            Thread.Sleep(3000);
             Console.WriteLine("Coloque o bacon no prato");
 
             return new Bacon();
@@ -82,10 +83,10 @@ namespace AsyncBreakfast
         {
             Console.WriteLine();
             Console.WriteLine("Aquecendo a panela...");
-            Task.Delay(3000).Wait();
+            Thread.Sleep(3000);
             Console.WriteLine($"quebrando {numOvos} ovos");
             Console.WriteLine("fritando os ovos ...");
-            Task.Delay(3000).Wait();
+            Thread.Sleep(3000);
             Console.WriteLine("Coloque os ovos no prato");
 
             return new Ovo();
