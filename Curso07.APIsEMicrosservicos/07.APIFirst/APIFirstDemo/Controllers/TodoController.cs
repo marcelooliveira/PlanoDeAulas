@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace APIFirstDemo.Controllers
 {
@@ -21,9 +22,9 @@ namespace APIFirstDemo.Controllers
         /// <param name="item">dados da tarefa</param>
         /// <returns>tarefa criada</returns>
         [HttpPost]
-        public ActionResult<TodoItem> Post([FromBody]TodoItem item)
+        public async Task<ActionResult<TodoItem>> PostAsync([FromBody]TodoItem item)
         {
-            return Ok(service.Create(item));
+            return Ok(await service.CreateAsync(item));
         }
 
         /// <summary>
@@ -32,9 +33,9 @@ namespace APIFirstDemo.Controllers
         /// <param name="id">Id da tarefa</param>
         /// <returns>Tarefa retornada</returns>
         [HttpGet("{id}")]
-        public ActionResult<TodoItem> Get(int id)
+        public async Task<ActionResult<TodoItem>> GetAsync(int id)
         {
-            return Ok(service.Get(id));
+            return Ok(await service.GetAsync(id));
         }
 
         /// <summary>
@@ -43,9 +44,9 @@ namespace APIFirstDemo.Controllers
         /// <param name="item">Tarefa a ser criada ou atualizada</param>
         /// <returns>Tarea criada ou atualizada</returns>
         [HttpPut]
-        public ActionResult<TodoItem> Put(TodoItem item)
+        public async Task<ActionResult<TodoItem>> PutAsync(TodoItem item)
         {
-            return Ok(service.Save(item));
+            return Ok(await service.SaveAsync(item));
         }
 
         /// <summary>
@@ -54,9 +55,9 @@ namespace APIFirstDemo.Controllers
         /// <param name="id">Tarefa a ser removida</param>
         /// <returns>Tarefa que foi removida</returns>
         [HttpDelete("{id}")]
-        public ActionResult<TodoItem> Delete(int id)
+        public async Task<ActionResult<TodoItem>> DeleteAsync(int id)
         {
-            return Ok(service.Delete(id));
+            return Ok(await service.DeleteAsync(id));
         }
 
         /// <summary>
@@ -65,9 +66,9 @@ namespace APIFirstDemo.Controllers
         /// <returns>Lista das tarefas retornadas</returns>
         [HttpGet]
         [Route("GetAll")]
-        public ActionResult<List<TodoItem>> GetAll()
+        public async Task<ActionResult<List<TodoItem>>> GetAllAsync()
         {
-            return Ok(service.GetAll());
+            return Ok(await service.GetAllAsync());
         }
     }
 }

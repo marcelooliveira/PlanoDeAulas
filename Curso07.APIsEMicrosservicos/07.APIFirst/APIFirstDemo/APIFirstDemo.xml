@@ -9,35 +9,35 @@
             Operações para criar, obter, atualizar e remover tarefas (TO-DO LIST)
             </summary>
         </member>
-        <member name="M:APIFirstDemo.Controllers.TodoController.Post(APIFirstDemo.TodoItem)">
+        <member name="M:APIFirstDemo.Controllers.TodoController.PostAsync(APIFirstDemo.TodoItem)">
             <summary>
             Cria uma nova tarefa
             </summary>
             <param name="item">dados da tarefa</param>
             <returns>tarefa criada</returns>
         </member>
-        <member name="M:APIFirstDemo.Controllers.TodoController.Get(System.Int32)">
+        <member name="M:APIFirstDemo.Controllers.TodoController.GetAsync(System.Int32)">
             <summary>
             Obtém uma tarefa por Id
             </summary>
             <param name="id">Id da tarefa</param>
             <returns>Tarefa retornada</returns>
         </member>
-        <member name="M:APIFirstDemo.Controllers.TodoController.Put(APIFirstDemo.TodoItem)">
+        <member name="M:APIFirstDemo.Controllers.TodoController.PutAsync(APIFirstDemo.TodoItem)">
             <summary>
             Cria ou modifica uma tarefa
             </summary>
             <param name="item">Tarefa a ser criada ou atualizada</param>
             <returns>Tarea criada ou atualizada</returns>
         </member>
-        <member name="M:APIFirstDemo.Controllers.TodoController.Delete(System.Int32)">
+        <member name="M:APIFirstDemo.Controllers.TodoController.DeleteAsync(System.Int32)">
             <summary>
             Remove uma tarefa
             </summary>
             <param name="id">Tarefa a ser removida</param>
             <returns>Tarefa que foi removida</returns>
         </member>
-        <member name="M:APIFirstDemo.Controllers.TodoController.GetAll">
+        <member name="M:APIFirstDemo.Controllers.TodoController.GetAllAsync">
             <summary>
             Obtém todas as tarefas
             </summary>
