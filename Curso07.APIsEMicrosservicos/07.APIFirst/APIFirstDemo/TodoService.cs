@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace APIFirstDemo
 {
@@ -25,6 +27,12 @@ namespace APIFirstDemo
             return todoItems.Values.ToList();
         }
 
+        public async Task<List<TodoItem>> GetAllAsync()
+        {
+            await Task.Delay(1000);
+            return GetAll();
+        }
+
         public TodoItem Get(int id)
         {
             return todoItems
@@ -33,12 +41,24 @@ namespace APIFirstDemo
                 .SingleOrDefault();
         }
 
+        public async Task<TodoItem> GetAsync(int id)
+        {
+            await Task.Delay(1000);
+            return Get(id);
+        }
+
         public TodoItem Create(TodoItem item)
         {
             int id = GetNextId();
             var newItem = new TodoItem(id, item.Name);
             todoItems.Add(id, newItem);
             return newItem;
+        }
+
+        public async Task<TodoItem> CreateAsync(TodoItem item)
+        {
+            await Task.Delay(1000);
+            return Create(item);
         }
 
         public TodoItem Save(TodoItem item)
@@ -57,6 +77,12 @@ namespace APIFirstDemo
             }
         }
 
+        public async Task<TodoItem> SaveAsync(TodoItem item)
+        {
+            await Task.Delay(1000);
+            return Save(item);
+        }
+
         public TodoItem Delete(int id)
         {
             TodoItem item = null;
@@ -66,6 +92,12 @@ namespace APIFirstDemo
                 todoItems.Remove(id);
             }
             return item;
+        }
+
+        public async Task<TodoItem> DeleteAsync(int id)
+        {
+            await Task.Delay(1000);
+            return Delete(id);
         }
     }
 }
