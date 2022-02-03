@@ -6,18 +6,18 @@ namespace AsyncBreakfast
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Cafe xicara = ServirCafe();
             Console.WriteLine("CAFÉ ESTÁ PRONTO");
 
-            Ovo ovos = FritarOvos(2);
+            Ovo ovos = await FritarOvosAsync(2);
             Console.WriteLine("OVOS ESTÃO PRONTOS");
 
-            Bacon bacon = FritarBacon(3);
+            Bacon bacon = await FritarBaconAsync(3);
             Console.WriteLine("BACON ESTÁ PRONTO");
 
-            Torrada torrada = TorrarPao(2);
+            Torrada torrada = await TorrarPaoAsync(2);
             PassarManteiga(torrada);
             PassarGeleia(torrada);
             Console.WriteLine("TORRADA ESTÁ PRONTA");
@@ -48,7 +48,7 @@ namespace AsyncBreakfast
             Console.WriteLine("Passando manteiga na torrada");
         }
 
-        private static Torrada TorrarPao(int fatias)
+        private static async Task<Torrada> TorrarPaoAsync(int fatias)
         {
             Console.WriteLine();
             for (int fatia = 0; fatia < fatias; fatia++)
@@ -56,37 +56,45 @@ namespace AsyncBreakfast
                 Console.WriteLine("Inserindo uma fatia de pão na torradeira");
             }
             Console.WriteLine("Aquecendo a torradeira...");
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000); //BLOQUEIA!!!
+            await Task.Delay(3000); //AGUARDA, SEM BLOQUEAR!!!
             Console.WriteLine("Retire a fatia da torradeira");
 
             return new Torrada();
         }
 
-        private static Bacon FritarBacon(int fatias)
+        private static async Task<Bacon> FritarBaconAsync(int fatias)
         {
             Console.WriteLine();
             Console.WriteLine($"inserindo {fatias} fatias de bacon na panela");
             Console.WriteLine("fritando o primeiro lado do bacon...");
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000); //BLOQUEIA A THREAD!!!
+            await Task.Delay(3000); //AGUARDA MAS NÃO BLOQUEIA!
             for (int fatia = 0; fatia < fatias; fatia++)
             {
                 Console.WriteLine("virando o bacon");
             }
             Console.WriteLine("fritando o segundo lado do bacon...");
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
+            await Task.Delay(3000); //AGUARDA MAS NÃO BLOQUEIA!
+
             Console.WriteLine("Coloque o bacon no prato");
 
             return new Bacon();
         }
 
-        private static Ovo FritarOvos(int numOvos)
+        private static async Task<Ovo> FritarOvosAsync(int numOvos)
         {
             Console.WriteLine();
             Console.WriteLine("Aquecendo a panela...");
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000); //BLOQUEIA A THREAD!!
+            await Task.Delay(3000); //AGUARDA MAS NÃO BLOQUEIA!
+
             Console.WriteLine($"quebrando {numOvos} ovos");
             Console.WriteLine("fritando os ovos ...");
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
+            await Task.Delay(3000); //AGUARDA MAS NÃO BLOQUEIA!
+
             Console.WriteLine("Coloque os ovos no prato");
 
             return new Ovo();
