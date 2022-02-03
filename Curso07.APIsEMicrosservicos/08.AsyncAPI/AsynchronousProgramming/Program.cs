@@ -11,11 +11,13 @@ namespace AsyncBreakfast
             Cafe xicara = ServirCafe();
             Console.WriteLine("CAFÉ ESTÁ PRONTO");
 
-            Ovo ovos = await FritarOvosAsync(2);
-            Console.WriteLine("OVOS ESTÃO PRONTOS");
 
-            Bacon bacon = await FritarBaconAsync(3);
-            Console.WriteLine("BACON ESTÁ PRONTO");
+            Task<Ovo> ovosTask = FritarOvosAsync(2);
+            //Ovo ovos = await FritarOvosAsync(2);
+
+            Task<Bacon> baconTask = FritarBaconAsync(3);
+            //Bacon bacon = await FritarBaconAsync(3);
+
 
             Torrada torrada = await TorrarPaoAsync(2);
             PassarManteiga(torrada);
@@ -24,6 +26,12 @@ namespace AsyncBreakfast
 
             Suco suco = ServirSuco();
             Console.WriteLine("SUCO DE LARANJA ESTÁ PRONTO");
+
+            Ovo ovos = await ovosTask;
+            Console.WriteLine("OVOS ESTÃO PRONTOS");
+
+            Bacon bacon = await baconTask;
+            Console.WriteLine("BACON ESTÁ PRONTO");
 
             Console.WriteLine();
             Console.WriteLine("CAFÉ DA MANHÃ ESTÁ PRONTO!");
