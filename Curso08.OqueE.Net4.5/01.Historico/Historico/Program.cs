@@ -6,35 +6,38 @@ namespace Historico
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello World!");
+
             // 2002 - .NET Framework 1.0
             //===========================
-            #region Common Language Runtime
-            //ILSPY
-            //ILSpy é o navegador e descompilador de assembly .NET de código aberto.
-
-            //https://www.microsoft.com/en-us/p/ilspy/9mxfbkfvsq13#activetab=pivot:overviewtab
-
+            #region CLR - Common Language Runtime
             //C#, F#, VB.NET -> COMPILADOR -> IL -> CLR -> CÓDIGO DE MÁQUINA
             // < image url="$(ProjectDir)/il.png"/>
             #endregion
+            //OOP
+            //DLL Class Libraries
 
             // 2003 - .NET Framework 1.1
             //===========================
+            //ASP.NET
+            //ADO.NET - ActiveX Data Objects
+            //Code Access Security (CAS)
 
             // 2005 - .NET Framework 2.0
             //===========================
             //WinForms
-            //ASP.NET
-            //ADO.NET
+            //ASP.NET - melhorias
+            //ADO.NET - melhorias
             //Partial classes
             //Nullable types
             //Generics
+            //Métodos anônimos
 
             // 2006 - .NET Framework 3.0
             //===========================
-            //WPF
-            //WCF
-            //WF
+            //WPF - Windows Presentation Foundation
+            //WCF - Windows Communication Foundation
+            //WWF - Windows Workflow Foundation
             //Card Space
 
             // 2007 - .NET Framework 3.5
@@ -51,7 +54,9 @@ namespace Historico
             //===========================
             //.NET APIs for Store/UWP Apps
             //Task-Based Async Model
-            Console.WriteLine("Hello World!");
+
+            //2016 - .NET Core 1.0
+            //====================
         }
     }
 }
