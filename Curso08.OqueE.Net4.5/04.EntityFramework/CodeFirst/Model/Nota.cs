@@ -8,6 +8,6 @@ namespace CodeFirstDemo.Model
 {
     public enum Nota
     {
-        A,B,C,D,E,F
+        A, B, C, D, E, F
     }
 }
