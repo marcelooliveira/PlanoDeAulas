@@ -1,11 +1,4 @@
-﻿IF OBJECT_ID('dbo.Pedidos') IS NOT NULL
-DROP TABLE dbo.Pedidos;
-GO
-
-IF OBJECT_ID('dbo.Clientes') IS NOT NULL
-DROP TABLE dbo.Clientes;
-GO
-IF OBJECT_ID('dbo.Pedido') IS NOT NULL
+﻿IF OBJECT_ID('dbo.Pedido') IS NOT NULL
 DROP TABLE dbo.Pedido;
 GO
 
