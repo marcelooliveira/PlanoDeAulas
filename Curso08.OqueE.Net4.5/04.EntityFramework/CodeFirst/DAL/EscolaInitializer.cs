@@ -37,7 +37,7 @@ namespace CodeFirstDemo.DAL
             };
             courses.ForEach(s => context.Cursos.Add(s));
             context.SaveChanges();
-            var enrollments = new List<Matricula>
+            var matriculas = new List<Matricula>
             {
                 new Matricula{AlunoID=1,CursoID=1050,Nota=Nota.A},
                 new Matricula{AlunoID=1,CursoID=4022,Nota=Nota.C},
@@ -52,7 +52,7 @@ namespace CodeFirstDemo.DAL
                 new Matricula{AlunoID=6,CursoID=1045},
                 new Matricula{AlunoID=7,CursoID=3141,Nota=Nota.A},
             };
-            enrollments.ForEach(s => context.Matriculas.Add(s));
+            matriculas.ForEach(s => context.Matriculas.Add(s));
             context.SaveChanges();
         }
     }

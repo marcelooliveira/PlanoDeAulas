@@ -37,7 +37,7 @@ namespace CodeFirstDemo.Model
         public string Titulo { get; set; }
         public int Creditos { get; set; }
 
-        public virtual ICollection<Matricula> Enrollments { get; set; }
+        public virtual ICollection<Matricula> Matriculas { get; set; }
     }
 }
 
