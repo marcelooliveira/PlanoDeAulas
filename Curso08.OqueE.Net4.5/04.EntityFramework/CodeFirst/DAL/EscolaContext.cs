@@ -13,8 +13,8 @@ namespace CodeFirstDemo.DAL
     {
         public EscolaContext() : base("EscolaContext")
         {
-        }
 
+        }
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Matricula> Matriculas { get; set; }
         public DbSet<Curso> Cursos { get; set; }

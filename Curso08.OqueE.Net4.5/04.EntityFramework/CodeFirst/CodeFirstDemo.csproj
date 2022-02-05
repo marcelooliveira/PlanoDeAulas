@@ -53,6 +53,9 @@
     <Compile Include="DAL\EscolaContext.cs" />
     <Compile Include="DAL\EscolaInitializer.cs" />
     <Compile Include="Model\Aluno.cs" />
+    <Compile Include="Model\Curso.cs" />
+    <Compile Include="Model\Matricula.cs" />
+    <Compile Include="Model\Nota.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
