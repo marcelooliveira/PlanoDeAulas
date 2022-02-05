@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBFirstDemo", "DBFirstDemo.csproj", "{17727A4B-0B23-488E-9F34-50C5A1FBAEAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXXDBFirstDemo", "XXXDBFirstDemo.csproj", "{7743392E-B1A4-4597-801A-D68C1543ED7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{17727A4B-0B23-488E-9F34-50C5A1FBAEAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17727A4B-0B23-488E-9F34-50C5A1FBAEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17727A4B-0B23-488E-9F34-50C5A1FBAEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17727A4B-0B23-488E-9F34-50C5A1FBAEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7743392E-B1A4-4597-801A-D68C1543ED7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7743392E-B1A4-4597-801A-D68C1543ED7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7743392E-B1A4-4597-801A-D68C1543ED7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7743392E-B1A4-4597-801A-D68C1543ED7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {64E8ADE1-840D-47DD-86BA-41828491A65F}
+		SolutionGuid = {06E41EEB-5F3B-4D79-BDD6-474087966ECA}
 	EndGlobalSection
 EndGlobal
