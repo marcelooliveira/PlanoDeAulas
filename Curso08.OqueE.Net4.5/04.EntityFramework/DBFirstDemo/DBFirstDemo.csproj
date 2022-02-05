@@ -67,15 +67,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>Loja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loja.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Loja.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loja.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Loja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Loja.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido.cs">
+      <DependentUpon>Loja.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Loja.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Loja.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Loja.edmx.diagram">
+      <DependentUpon>Loja.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Loja.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Loja.edmx</DependentUpon>
+      <LastGenOutput>Loja.Context.cs</LastGenOutput>
+    </Content>
     <Content Include="Loja.sql" />
+    <Content Include="Loja.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Loja.edmx</DependentUpon>
+      <LastGenOutput>Loja.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
