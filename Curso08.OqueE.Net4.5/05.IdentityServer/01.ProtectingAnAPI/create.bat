@@ -32,11 +32,12 @@ echo O carregamento do recurso e das definicoes do cliente acontece em Startup.c
 echo 
 echo 
 echo E isso - seu servidor de identidade agora deve estar configurado. Se voce executar o servidor e navegar no navegador para https://localhost:5001/.well-known/openid-configuration, devera ver o chamado documento de descoberta. O documento de descoberta e um endpoint padrao em servidores de identidade. O documento de descoberta sera usado por seus clientes e APIs para baixar os dados de configuracao necessarios.
+dotnet new webapi -n Api -f netcoreapp3.1
+dotnet sln add Api\Api.csproj
+dotnet new console -n Client -f netcoreapp3.1
+dotnet sln add Client\Client.csproj
 dotnet build
 cd IdentityServer
 dotnet run
 cd ..
 chrome "https://localhost:5001/.well-known/openid-configuration"
-
-
-
