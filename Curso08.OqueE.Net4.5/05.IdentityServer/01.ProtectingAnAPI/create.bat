@@ -241,10 +241,12 @@ Console.ReadKey();
 
 Chamando a API
 
-Para enviar o token de acesso à API, você normalmente usa o cabeçalho HTTP Authorization. Isso é feito usando o método de extensão SetBearerToken:
 
 // chama a api
 var apiClient = new HttpClient();
+
+Para enviar o token de acesso à API, você normalmente usa o cabeçalho HTTP Authorization. Isso é feito usando o método de extensão SetBearerToken:
+
 apiClient.SetBearerToken(tokenResponse.AccessToken);
 
 var response = await apiClient.GetAsync("https://localhost:5000/identity");
