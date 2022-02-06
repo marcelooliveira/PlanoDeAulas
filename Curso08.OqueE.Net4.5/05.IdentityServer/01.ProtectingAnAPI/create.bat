@@ -6,6 +6,24 @@
 
 
 
+
+
+
+
+
+
+
+
+OpenID Connect permite cenários onde um login pode ser usado em vários aplicativos, também conhecido como single sign-on (SSO).
+
+OAuth 2.0 foi projetado apenas para autorização, para conceder acesso a dados e recursos de um aplicativo para outro. ... 
+
+
+
+
+
+
+
 :: Primeiro, crie uma nova solucao:
 
 dotnet new sln -n ProtegendoUmaAPI
