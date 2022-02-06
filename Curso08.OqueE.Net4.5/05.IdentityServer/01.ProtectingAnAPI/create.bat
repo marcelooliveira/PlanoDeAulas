@@ -189,9 +189,10 @@ public class Startup
 
 :: Navegar para o controlador https://localhost:5000/identity em um navegador deve retornar um código de status 401. Isso significa que sua API requer uma credencial e agora está protegida pelo IdentityServer.
 
-:: Configurando o cliente
+:: CONFIGURANDO O CLIENTE
+:: ======================
 
-:: O cliente solicita um token de acesso e, em seguida, use esse token para acessar a API. Para isso, adicione um projeto de console à sua solução:
+:: O cliente solicita um token de acesso e, em seguida, use esse token para acessar a API.
 
 :: O endpoint IdentityServer implementa o protocolo OAuth 2.0 e você pode usar HTTP  para acessá-lo. No entanto, temos uma biblioteca cliente chamada IdentityModel, que encapsula a interação do protocolo em uma API fácil de usar.
 
