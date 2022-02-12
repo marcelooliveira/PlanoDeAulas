@@ -11,6 +11,11 @@ namespace PadraoMVC.Controllers
         //ViewResult - representa HTML
         public ActionResult Index()
         {
+            ViewBag.Id = 8;
+            ViewBag.Avatar = "👩🏾";
+            ViewBag.PlayerName = "Marlene F. Martelli";
+            ViewBag.Points = 1298;
+
             return View();
         }
 

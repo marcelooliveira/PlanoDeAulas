@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Ranking de Jogadores";
+}
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+
+<h2>Ranking</h2>
+
+<p>Olá, estamos na View Template!</p>
+
+<table>
+    <tr>
+        <td>
+            Id
+        </td>
+        <td>
+            Avatar
+        </td>
+        <td>
+            Nome Jogador
+        </td>
+        <td>
+            Pontos
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @ViewBag.Id
+        </td>
+        <td>
+            @ViewBag.Avatar
+        </td>
+        <td>
+            @ViewBag.PlayerName
+        </td>
+        <td>
+            @ViewBag.Points
+        </td>
+    </tr>
+</table>
