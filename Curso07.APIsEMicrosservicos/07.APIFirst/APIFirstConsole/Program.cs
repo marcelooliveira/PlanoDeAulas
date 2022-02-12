@@ -27,7 +27,7 @@ namespace APIFirstClient
 
         private static async Task CriaUmaNovaTarefa(TodoItem item)
         {
-            Console.WriteLine("Cria Uma Nova Tarefa");
+            Console.WriteLine("HTTP.POST: Cria Uma Nova Tarefa");
             Console.WriteLine("======================");
             using (var client = new RestClient("http://localhost:5001"))
             {
@@ -41,7 +41,7 @@ namespace APIFirstClient
 
         private static async Task AtualizaUmaTarefa(TodoItem item)
         {
-            Console.WriteLine("Atualiza Uma Tarefa");
+            Console.WriteLine("HTTP.PUT: Atualiza Uma Tarefa");
             Console.WriteLine("======================");
             using (var client = new RestClient("http://localhost:5001"))
             {
@@ -55,7 +55,7 @@ namespace APIFirstClient
 
         private static async Task RemoveUmaTarefa(int id)
         {
-            Console.WriteLine("Remove Uma Tarefa");
+            Console.WriteLine("HTTP.DELETE: Remove Uma Tarefa");
             Console.WriteLine("======================");
             using (var client = new RestClient("http://localhost:5001"))
             {
@@ -68,7 +68,7 @@ namespace APIFirstClient
 
         private static async Task ObtemUmaTarefa(int id)
         {
-            Console.WriteLine("Obtém Uma Tarefa");
+            Console.WriteLine("HTTP.GET: Obtém Uma Tarefa");
             Console.WriteLine("======================");
             using (var client = new RestClient("http://localhost:5001"))
             {
@@ -81,7 +81,7 @@ namespace APIFirstClient
 
         private static async Task ListaTodasAsTarefas()
         {
-            Console.WriteLine("Lista todas as tarefas");
+            Console.WriteLine("HTTP.GET: Lista todas as tarefas");
             Console.WriteLine("======================");
             using (var client = new RestClient("http://localhost:5001"))
             {
