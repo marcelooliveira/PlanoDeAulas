@@ -41,7 +41,11 @@ namespace PadraoMVC
 
         public List<Score> GetAll()
         {
-            return scores.Values.ToList();
+            return scores
+                .Values
+                .ToList()
+                .OrderByDescending(o => o.Points)
+                .ToList();
         }
 
         public Score Get(int id)
