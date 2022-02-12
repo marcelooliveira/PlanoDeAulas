@@ -25,7 +25,7 @@
                     <span class="col col-md-3 mt-0 h1 border-left text-right">Pontos</span>
                 </div>
                 <div class="row">
-                    <input type="hidden" name="Id" value="@(Model.NewScore.Id)"/>
+                    <input type="hidden" name="Id" value="@(Model.NewScore.Id)" />
                     <select name="Avatar" id="avatars" class="col col-md-3 mt-0 h1">
                         @foreach (var avatar in Model.Avatars)
                         {
@@ -39,8 +39,19 @@
                             }
                         }
                     </select>
-                    <input type="text" class="col col-md-6 mt-0 h1" name="PlayerName" value="@(Model.NewScore.PlayerName)"/>
-                    <input type="number" class="col col-md-3 mt-0 h1 text-right" name="Points" value="@(Model.NewScore.Points)"/>
+                    @*                    <input type="text" class="col col-md-6 mt-0 h1" name="PlayerName" value="@(Model.NewScore.PlayerName)" />*@
+
+                    @Html.TextBoxFor(m => m.NewScore.PlayerName, new { @class = "col col-md-6 mt-0 h1", name = "PlayerName" })
+
+                    @*                    <input type="number" class="col col-md-3 mt-0 h1 text-right" name="Points" value="@(Model.NewScore.Points)" />*@
+
+                    @Html.TextBoxFor(m => m.NewScore.Points, new { type = "number", @class = "col col-md-3 mt-0 h1 text-right", name = "Points" })
+                </div>
+                <div class="h4 alert-warning">
+                    @Html.ValidationMessageFor(m => m.NewScore.PlayerName)
+                </div>
+                <div class="h4 alert-warning">
+                    @Html.ValidationMessageFor(m => m.NewScore.Points)
                 </div>
             </div>
         </div>
@@ -54,3 +65,6 @@
     </form>
 </body>
 </html>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
