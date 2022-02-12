@@ -8,7 +8,7 @@ namespace PadraoMVC.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(int id)
+        public ActionResult Index()
         {
             return View();
         }
