@@ -9,23 +9,15 @@ namespace PadraoMVC.Controllers
 {
     public class RankingController : Controller
     {
-        //ViewResult - representa HTML
         public ActionResult Index()
         {
-            //ViewBag.Id = 8;
-            //ViewBag.Avatar = "👩🏾";
-            //ViewBag.PlayerName = "Marlene F. Martelli";
-            //ViewBag.Points = 1298;
-
-            List<Score> modelo = new List<Score>
-            {
-                new Score(8, "👩🏾", "Marlene F. Martelli", 1298),
-                new Score(1, "👨🏽", "Caio D. Torres", 800),
-                new Score(7, "👩🏿", "Sandra D. Martins", 765),
-                new Score(3, "👨🏾", "Tiago O. Vieira", 721)
-            };
-
+            var modelo = RankingService.Instance().GetAll();
             return View(modelo);
+        }
+
+        public ActionResult NovoScore()
+        {
+            return View();
         }
 
         //EmptyResult - não representa nenhum resultado

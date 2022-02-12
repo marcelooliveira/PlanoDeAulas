@@ -9,6 +9,24 @@ namespace PadraoMVC
         static readonly Dictionary<int, Score> scores
             = new Dictionary<int, Score>();
 
+        private static RankingService instance;
+        public static RankingService Instance()
+        {
+            if (instance == null)
+            {
+                instance = new RankingService();
+            }
+            return instance;
+        }
+
+        private RankingService()
+        {
+            scores.Add(8, new Score(8, "👩🏾", "Marlene F. Martelli", 1298));
+            scores.Add(1, new Score(1, "👨🏽", "Caio D. Torres", 800));
+            scores.Add(7, new Score(7, "👩🏿", "Sandra D. Martins", 765));
+            scores.Add(3, new Score(3, "👨🏾", "Tiago O. Vieira", 721));
+        }
+
         public static int GetNextId()
         {
             int id = 0;
