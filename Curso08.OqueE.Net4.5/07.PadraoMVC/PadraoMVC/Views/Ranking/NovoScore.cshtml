@@ -1,4 +1,5 @@
-﻿@{
+﻿@model PadraoMVC.Models.NewScoreViewModel
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -24,21 +25,22 @@
                     <span class="col col-md-3 mt-0 h1 border-left text-right">Pontos</span>
                 </div>
                 <div class="row">
-                    <input type="hidden" name="id" value="1234"/>
-                    <select name="avatar" id="avatars" class="col col-md-3 mt-0 h1">
-                        <option value="👨🏻">👨🏻</option>
-                        <option value="👨🏼">👨🏼</option>
-                        <option value="👨🏽">👨🏽</option>
-                        <option value="👨🏾">👨🏾</option>
-                        <option value="👨🏿">👨🏿</option>
-                        <option value="👩🏻">👩🏻</option>
-                        <option value="👩🏼">👩🏼</option>
-                        <option value="👩🏽">👩🏽</option>
-                        <option value="👩🏾">👩🏾</option>
-                        <option value="👩🏿">👩🏿</option>
+                    <input type="hidden" name="Id" value="@(Model.NewScore.Id)"/>
+                    <select name="Avatar" id="avatars" class="col col-md-3 mt-0 h1">
+                        @foreach (var avatar in Model.Avatars)
+                        {
+                            if (avatar == Model.NewScore.Avatar)
+                            {
+                                <option value="@avatar" selected>@avatar</option>
+                            }
+                            else
+                            {
+                                <option value="@avatar">@avatar</option>
+                            }
+                        }
                     </select>
-                    <input type="text" class="col col-md-6 mt-0 h1" name="playername" value=""/>
-                    <input type="number" class="col col-md-3 mt-0 h1 text-right" name="points" value="0"/>
+                    <input type="text" class="col col-md-6 mt-0 h1" name="PlayerName" value="@(Model.NewScore.PlayerName)"/>
+                    <input type="number" class="col col-md-3 mt-0 h1 text-right" name="Points" value="@(Model.NewScore.Points)"/>
                 </div>
             </div>
         </div>

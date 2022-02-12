@@ -15,9 +15,18 @@ namespace PadraoMVC.Controllers
             return View(modelo);
         }
 
+        [HttpGet]
         public ActionResult NovoScore()
         {
-            return View();
+            var modelo = new NewScoreViewModel();
+            return View(modelo);
+        }
+
+        [HttpPost]
+        public ActionResult NovoScore(Score input)
+        {
+            RankingService.Instance().Create(input);
+            return Redirect("/Ranking");
         }
 
         //EmptyResult - não representa nenhum resultado

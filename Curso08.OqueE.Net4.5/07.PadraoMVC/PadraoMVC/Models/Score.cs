@@ -7,6 +7,11 @@ namespace PadraoMVC.Models
 {
     public class Score
     {
+        public Score()
+        {
+
+        }
+
         public Score(int id, string avatar, string playerName, int points)
         {
             Id = id;
