@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<PadraoMVC.Models.Score>
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -31,18 +33,22 @@
             Pontos
         </td>
     </tr>
-    <tr>
-        <td>
-            @ViewBag.Id
-        </td>
-        <td>
-            @ViewBag.Avatar
-        </td>
-        <td>
-            @ViewBag.PlayerName
-        </td>
-        <td>
-            @ViewBag.Points
-        </td>
-    </tr>
+    @foreach (var score in Model)
+    {
+        <tr>
+            <td>
+                @score.Id
+            </td>
+            <td>
+                @score.Avatar
+            </td>
+            <td>
+                @score.PlayerName
+            </td>
+            <td>
+                @score.Points
+            </td>
+        </tr>
+    }
+
 </table>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PadraoMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,12 +12,20 @@ namespace PadraoMVC.Controllers
         //ViewResult - representa HTML
         public ActionResult Index()
         {
-            ViewBag.Id = 8;
-            ViewBag.Avatar = "👩🏾";
-            ViewBag.PlayerName = "Marlene F. Martelli";
-            ViewBag.Points = 1298;
+            //ViewBag.Id = 8;
+            //ViewBag.Avatar = "👩🏾";
+            //ViewBag.PlayerName = "Marlene F. Martelli";
+            //ViewBag.Points = 1298;
 
-            return View();
+            List<Score> modelo = new List<Score>
+            {
+                new Score(8, "👩🏾", "Marlene F. Martelli", 1298),
+                new Score(1, "👨🏽", "Caio D. Torres", 800),
+                new Score(7, "👩🏿", "Sandra D. Martins", 765),
+                new Score(3, "👨🏾", "Tiago O. Vieira", 721)
+            };
+
+            return View(modelo);
         }
 
         //EmptyResult - não representa nenhum resultado
