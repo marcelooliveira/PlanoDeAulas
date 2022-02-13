@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\AlunoRepository.cs" />
+    <Compile Include="DAL\GenericRepository.cs" />
     <Compile Include="Entities\Aluno.cs" />
     <Compile Include="Entities\Curso.cs" />
     <Compile Include="Entities\EscolaContext.cs" />

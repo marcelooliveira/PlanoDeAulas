@@ -11,12 +11,13 @@ namespace UnitOfWork
 {
     class Program
     {
-        private static IAlunoRepository alunoRepository;
+        private static GenericRepository<Aluno> alunoRepository;
+        private static GenericRepository<Curso> cursoRepository;
 
         static void Main(string[] args)
         {
             var context = new EscolaContext();
-            alunoRepository = new AlunoRepository(context);
+            alunoRepository = new GenericRepository<Aluno>(context);
 
             ListaAlunos();
 
@@ -82,7 +83,7 @@ namespace UnitOfWork
 
         public static Aluno FindAlunoByName(string name)
         {
-            return alunoRepository.FindByName(name);
+            return alunoRepository.Find(e => e.Nome == name);
         }
 
         public static Aluno InsertAluno(Aluno aluno)
