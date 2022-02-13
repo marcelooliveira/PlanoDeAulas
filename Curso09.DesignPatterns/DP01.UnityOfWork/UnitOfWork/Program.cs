@@ -11,13 +11,11 @@ namespace UnitOfWork
 {
     class Program
     {
-        private static GenericRepository<Aluno> alunoRepository;
-        private static GenericRepository<Curso> cursoRepository;
-
+        private static UnitOfWork.DAL.UnitOfWork unitOfWork
+            = new DAL.UnitOfWork();
         static void Main(string[] args)
         {
-            var context = new EscolaContext();
-            alunoRepository = new GenericRepository<Aluno>(context);
+
 
             ListaAlunos();
 
@@ -56,7 +54,7 @@ namespace UnitOfWork
 
             ListaAlunos();
             
-            context.Dispose();
+            unitOfWork.Dispose();
         }
 
         private static void ListaAlunos()
@@ -73,37 +71,37 @@ namespace UnitOfWork
 
         private static IEnumerable<Aluno> GetAlunos()
         {
-            return alunoRepository.GetAll().ToList();
+            return unitOfWork.AlunoRepository.GetAll().ToList();
         }
 
         public static Aluno GetAlunoByID(int id)
         {
-            return alunoRepository.GetById(id);
+            return unitOfWork.AlunoRepository.GetById(id);
         }
 
         public static Aluno FindAlunoByName(string name)
         {
-            return alunoRepository.Find(e => e.Nome == name);
+            return unitOfWork.AlunoRepository.Find(e => e.Nome == name);
         }
 
         public static Aluno InsertAluno(Aluno aluno)
         {
-            return alunoRepository.Insert(aluno);
+            return unitOfWork.AlunoRepository.Insert(aluno);
         }
 
         public static void DeleteAluno(int alunoID)
         {
-            alunoRepository.Delete(alunoID);
+            unitOfWork.AlunoRepository.Delete(alunoID);
         }
 
         public static void UpdateAluno(Aluno aluno)
         {
-            alunoRepository.Update(aluno);
+            unitOfWork.AlunoRepository.Update(aluno);
         }
 
         public static void Save()
         {
-            alunoRepository.Save();
+            unitOfWork.AlunoRepository.Save();
         }
     }
 }
