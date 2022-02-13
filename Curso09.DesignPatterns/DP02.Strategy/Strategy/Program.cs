@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Strategy.RealWorld
 {
     
-    /// <image src="$(ProjectDir)/drill2 .png" scale =".5"/>
-    /// <image src="$(ProjectDir)/drill3 .png" scale =".5"/>
+    /// <image src="$(ProjectDir)/drill2.png" scale =".5"/>
+    /// <image src="$(ProjectDir)/drill3.png" scale =".5"/>
     /// <image src="$(ProjectDir)/strategy .png"/>
 
     /// <summary>
@@ -35,12 +35,13 @@ namespace Strategy.RealWorld
     }
 
     /// <summary>
-    /// A classe de "contexto"
+    /// A classe de "contexto" (FURADEIRA)
     /// </summary>
 
     public class SortedList
     {
         private List<string> list = new List<string>();
+        private SortStrategy sortStrategy;
 
         public void Add(string name)
         {
@@ -49,14 +50,73 @@ namespace Strategy.RealWorld
 
         public void Sort()
         {
-            list.Sort();
+            //list.Sort();
+            Console.WriteLine(sortStrategy.GetDescription());
+            var ordenado = sortStrategy.Sort(list);
 
             // Percorrer a lista e exibir os resultados
-            foreach (string nome in list)
+            foreach (string nome in ordenado)
             {
                 Console.WriteLine(" " + nome);
             }
             Console.WriteLine();
+        }
+    }
+
+    /// <summary>
+    /// A classe abstrata "Estratégia"
+    /// </summary>
+    public abstract class SortStrategy
+    {
+        public abstract string GetDescription();
+        public abstract IEnumerable<string> Sort(List<string> list);
+    }
+
+    /// <summary>
+    /// Uma classe "Estratégia" concreta
+    /// </summary>
+    public class QuickSort : SortStrategy
+    {
+        public override string GetDescription()
+        {
+            return "Quicksort: execuções de particionamento.";
+        }
+
+        public override IEnumerable<string> Sort(List<string> list)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
+    /// Uma classe "Estratégia" concreta
+    /// </summary>
+    public class BubbleSort : SortStrategy
+    {
+        public override string GetDescription()
+        {
+            return "BubbleSort: ordenação por bolha";
+        }
+
+        public override IEnumerable<string> Sort(List<string> list)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
+    /// Uma classe "Estratégia" concreta
+    /// </summary>
+    public class MergeSort : SortStrategy
+    {
+        public override string GetDescription()
+        {
+            return "MergeSort: ordenação por divisão e conquista.";
+        }
+
+        public override IEnumerable<string> Sort(List<string> list)
+        {
+            throw new NotImplementedException();
         }
     }
 }
