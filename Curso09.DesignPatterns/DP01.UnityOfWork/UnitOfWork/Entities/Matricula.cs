@@ -9,7 +9,7 @@ namespace UnitOfWork.Entities
     [Table("Matricula")]
     public partial class Matricula
     {
-        public int MatriculaID { get; set; }
+        public int ID { get; set; }
 
         public int CursoID { get; set; }
 

@@ -16,7 +16,7 @@ namespace UnitOfWork.Entities
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int CursoID { get; set; }
+        public int ID { get; set; }
 
         public string Titulo { get; set; }
 
