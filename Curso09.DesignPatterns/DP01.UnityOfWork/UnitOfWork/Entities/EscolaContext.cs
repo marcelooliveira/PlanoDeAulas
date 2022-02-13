@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace UnitOfWork.Entities
 {
-    public partial class EscolaEntities : DbContext
+    public partial class EscolaContext : DbContext
     {
-        public EscolaEntities()
+        public EscolaContext()
             : base("name=Escola")
         {
         }

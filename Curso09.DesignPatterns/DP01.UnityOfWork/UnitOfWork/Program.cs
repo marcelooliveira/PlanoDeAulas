@@ -10,11 +10,11 @@ namespace UnitOfWork
 {
     class Program
     {
-        private static EscolaEntities context;
+        private static EscolaContext context;
 
         static void Main(string[] args)
         {
-            context = new EscolaEntities();
+            context = new EscolaContext();
 
             ListaAlunos();
 
