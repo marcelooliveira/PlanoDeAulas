@@ -4,17 +4,19 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnitOfWork.DAL;
 using UnitOfWork.Entities;
 
 namespace UnitOfWork
 {
     class Program
     {
-        private static EscolaContext context;
+        private static IAlunoRepository alunoRepository;
 
         static void Main(string[] args)
         {
-            context = new EscolaContext();
+            var context = new EscolaContext();
+            alunoRepository = new AlunoRepository(context);
 
             ListaAlunos();
 
@@ -52,8 +54,7 @@ namespace UnitOfWork
             Save();
 
             ListaAlunos();
-            ListaCursos();
-
+            
             context.Dispose();
         }
 
@@ -69,66 +70,39 @@ namespace UnitOfWork
             }
         }
 
-        private static void ListaCursos()
-        {
-            Console.WriteLine();
-            Console.WriteLine("Lista Cursos");
-            Console.WriteLine("============");
-            IEnumerable<Curso> cursos = GetCursos();
-            foreach (var curso in cursos)
-            {
-                Console.WriteLine($"Cursos: id={curso.ID}, nome={curso.Titulo}");
-            }
-        }
-
         private static IEnumerable<Aluno> GetAlunos()
         {
-            return context.Alunos.ToList();
+            return alunoRepository.GetAll().ToList();
         }
 
         public static Aluno GetAlunoByID(int id)
         {
-            return context.Alunos.Find(id);
+            return alunoRepository.GetById(id);
         }
 
         public static Aluno FindAlunoByName(string name)
         {
-            return context.Alunos.Where(e => e.Nome == name).SingleOrDefault();
+            return alunoRepository.FindByName(name);
         }
 
         public static Aluno InsertAluno(Aluno aluno)
         {
-            return context.Alunos.Add(aluno);
+            return alunoRepository.Insert(aluno);
         }
 
         public static void DeleteAluno(int alunoID)
         {
-            Aluno aluno = context.Alunos.Find(alunoID);
-            context.Alunos.Remove(aluno);
+            alunoRepository.Delete(alunoID);
         }
 
         public static void UpdateAluno(Aluno aluno)
         {
-            context.Entry(aluno).State = EntityState.Modified;
+            alunoRepository.Update(aluno);
         }
 
         public static void Save()
         {
-            context.SaveChanges();
-        }
-
-        private static IEnumerable<Curso> GetCursos()
-        {
-            return context.Cursos.ToList();
-        }
-
-        private static IEnumerable<Matricula> GetMatriculas()
-        {
-            return context
-                .Matriculas
-                .Include("Aluno")
-                .Include("Curso")
-                .ToList();
+            alunoRepository.Save();
         }
     }
 }
