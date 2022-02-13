@@ -18,15 +18,15 @@ namespace Strategy.RealWorld
         {
             // Dois contextos seguindo estratégias diferentes
 
-            SortedList alunos = new SortedList();
+            SortedList sortedList = new SortedList();
 
-            alunos.Add("Saulo");
-            alunos.Add("Janaelton");
-            alunos.Add("Luan");
-            alunos.Add("Adriano");
-            alunos.Add("Aline");
+            sortedList.Add("Saulo");
+            sortedList.Add("Janaelton");
+            sortedList.Add("Luan");
+            sortedList.Add("Adriano");
+            sortedList.Add("Aline");
 
-            alunos.Sort();
+            sortedList.Sort();
 
             // Aguarde o usuário
 
