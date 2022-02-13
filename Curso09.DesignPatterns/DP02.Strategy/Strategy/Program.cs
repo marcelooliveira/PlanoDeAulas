@@ -26,6 +26,13 @@ namespace Strategy.RealWorld
             sortedList.Add("Adriano");
             sortedList.Add("Aline");
 
+            sortedList.SetSortStrategy(new QuickSort());
+            sortedList.Sort();
+
+            sortedList.SetSortStrategy(new BubbleSort());
+            sortedList.Sort();
+
+            sortedList.SetSortStrategy(new MergeSort());
             sortedList.Sort();
 
             // Aguarde o usuário
@@ -42,6 +49,11 @@ namespace Strategy.RealWorld
     {
         private List<string> list = new List<string>();
         private SortStrategy sortStrategy;
+
+        public void SetSortStrategy(SortStrategy sortStrategy)
+        {
+            this.sortStrategy = sortStrategy;
+        }
 
         public void Add(string name)
         {
@@ -84,7 +96,8 @@ namespace Strategy.RealWorld
 
         public override IEnumerable<string> Sort(List<string> list)
         {
-            throw new NotImplementedException();
+            var algoritmo = new SmartSorting.Algorithms.QuickSort<string>();
+            return algoritmo.Sort(list, SmartSorting.Structure.ESortOrder.Ascending);
         }
     }
 
@@ -100,7 +113,8 @@ namespace Strategy.RealWorld
 
         public override IEnumerable<string> Sort(List<string> list)
         {
-            throw new NotImplementedException();
+            var algoritmo = new SmartSorting.Algorithms.BubbleSort<string>();
+            return algoritmo.Sort(list, SmartSorting.Structure.ESortOrder.Ascending);
         }
     }
 
@@ -116,7 +130,8 @@ namespace Strategy.RealWorld
 
         public override IEnumerable<string> Sort(List<string> list)
         {
-            throw new NotImplementedException();
+            var algoritmo = new SmartSorting.Algorithms.MergeSort<string>();
+            return algoritmo.Sort(list, SmartSorting.Structure.ESortOrder.Ascending);
         }
     }
 }
