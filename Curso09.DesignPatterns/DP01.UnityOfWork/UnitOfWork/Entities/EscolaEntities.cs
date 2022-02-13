@@ -5,15 +5,15 @@ using System.Linq;
 
 namespace UnitOfWork.Entities
 {
-    public partial class Entities : DbContext
+    public partial class EscolaEntities : DbContext
     {
-        public Entities()
+        public EscolaEntities()
             : base("name=Escola")
         {
         }
 
-        public virtual DbSet<Aluno> Alunoes { get; set; }
-        public virtual DbSet<Curso> Cursoes { get; set; }
+        public virtual DbSet<Aluno> Alunos { get; set; }
+        public virtual DbSet<Curso> Cursos { get; set; }
         public virtual DbSet<Matricula> Matriculas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
