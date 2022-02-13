@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UnityOfWork
+namespace UnitOfWork
 {
     class Program
     {
