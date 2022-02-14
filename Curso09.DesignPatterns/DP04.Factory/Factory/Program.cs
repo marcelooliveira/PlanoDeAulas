@@ -6,21 +6,63 @@ namespace Factory
     {
         public static void Main()
         {
-            LocacaoDeVeiculo veiculoAlugado = new LocacaoDeVeiculo(new Sedan4Portas(), new Alcool());
+            LocacaoDeVeiculo veiculoAlugado = new LocacaoDeVeiculo(new CarroDePasseioFactory());
             veiculoAlugado.Rodar();
 
-            veiculoAlugado = new LocacaoDeVeiculo(new CaminhaoBasculante(), new Diesel());
+            veiculoAlugado = new LocacaoDeVeiculo(new CaminhaoFactory());
             veiculoAlugado.Rodar();
 
-            //NÃO PODE!
-            veiculoAlugado = new LocacaoDeVeiculo(new CaminhaoBasculante(), new Alcool());
-            veiculoAlugado.Rodar();
-            
-            //NÃO PODE!
-            veiculoAlugado = new LocacaoDeVeiculo(new Sedan4Portas(), new Diesel());
-            veiculoAlugado.Rodar();
+            ////NÃO PODE!
+            //veiculoAlugado = new LocacaoDeVeiculo(new Sedan4Portas(), new Diesel());
+            //veiculoAlugado.Rodar();
+
+            ////NÃO PODE!
+            //veiculoAlugado = new LocacaoDeVeiculo(new CaminhaoBasculante(), new Alcool());
+            //veiculoAlugado.Rodar();
 
             Console.ReadKey();
+        }
+    }
+
+    /// <summary>
+    /// A classe "Abstract Factory"
+    /// </summary>
+    abstract class VeiculoFactory
+    {
+        public abstract Veiculo CreateVeiculo();
+        public abstract Combustivel CreateCombustivel();
+    }
+
+
+    /// <summary>
+    /// Fábrica concreta
+    /// </summary>
+    class CarroDePasseioFactory : VeiculoFactory
+    {
+        public override Combustivel CreateCombustivel()
+        {
+            return new Alcool();
+        }
+
+        public override Veiculo CreateVeiculo()
+        {
+            return new Sedan4Portas();
+        }
+    }
+
+    /// <summary>
+    /// Fábrica concreta
+    /// </summary>
+    class CaminhaoFactory : VeiculoFactory
+    {
+        public override Combustivel CreateCombustivel()
+        {
+            return new Diesel();
+        }
+
+        public override Veiculo CreateVeiculo()
+        {
+            return new CaminhaoBasculante();
         }
     }
 
@@ -92,10 +134,10 @@ namespace Factory
         private Combustivel _combustivel;
         private Veiculo _veiculo;
         
-        public LocacaoDeVeiculo(Veiculo veiculo, Combustivel combustivel)
+        public LocacaoDeVeiculo(VeiculoFactory veiculoFactory)
         {
-            _combustivel = combustivel;
-            _veiculo = veiculo;
+            _combustivel = veiculoFactory.CreateCombustivel();
+            _veiculo = veiculoFactory.CreateVeiculo();
         }
 
         public void Rodar()
