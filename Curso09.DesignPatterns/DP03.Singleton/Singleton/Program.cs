@@ -12,10 +12,10 @@ namespace Singleton.NetOptimized
 
         public static void Main()
         {
-            var b1 = new DatabaseConnection();
-            var b2 = new DatabaseConnection();
-            var b3 = new DatabaseConnection();
-            var b4 = new DatabaseConnection();
+            var b1 = DatabaseConnection.Instance;
+            var b2 = DatabaseConnection.Instance;
+            var b3 = DatabaseConnection.Instance;
+            var b4 = DatabaseConnection.Instance;
 
             // Confirma se os objetos são a mesma instância
 
@@ -41,13 +41,24 @@ namespace Singleton.NetOptimized
         }
     }
 
-    /// <summary>
-    /// The 'Singleton' class
-    /// </summary>
-
     public sealed class DatabaseConnection
     {
-        public DatabaseConnection()
+        private static DatabaseConnection instance;
+
+        public static DatabaseConnection Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new DatabaseConnection();
+                }
+
+                return instance;
+            }
+        }
+
+        private DatabaseConnection()
         {
 
         }
@@ -56,16 +67,6 @@ namespace Singleton.NetOptimized
         {
             return "Query executada com sucesso!";
         }
-    }
-
-    /// <summary>
-    /// Representa um servidor
-    /// </summary>
-
-    public class Server
-    {
-        public string Name { get; set; }
-        public string IP { get; set; }
     }
 }
 
